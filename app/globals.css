@@ -118,4 +118,44 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  h1, h2, h3 {
+    @apply font-semibold
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+}
+
+/* ===== UTILITIES ===== */
+@utility container {
+  @apply max-w-[90%] mx-auto
+}
+
+@utility flex-center {
+  @apply flex items-center;
+}
+
+/* ===== COMPONENTS ===== */
+@layer components {
+  .navbar-logo {
+    @apply flex items-center gap-2
+  }
+
+  .navbar-logo-icon {
+    @apply h-8 w-8 bg-blue-500 rounded-lg flex items-center justify-center text-white;
+  }
+
+  .product__list {
+    @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6
+  }
 }
