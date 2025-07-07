@@ -1,18 +1,35 @@
-import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image';
+import { ProductSummary } from '../interfaces/product-summary.interface'
 
-import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card'
 
-export const ProductCard = () => {
+interface Props {
+    product: ProductSummary;
+}
+
+
+export const ProductCard = ({ product }: Props) => {
+
+    const imageUrl = "http://localhost:8000/storage/" + product.image;
+
     return (
         <Card>
+            <CardHeader>
+                <Image
+                    src={imageUrl}
+                    alt={ product.name }
+                    width={400}
+                    height={400}
+                />
+            </CardHeader>
             <CardContent>
-                <h3 className='text-2xl font-medium'>Nombre del producto</h3>
-                <p>$ 1299</p>
+                <h3 className='text-2xl font-medium'>{ product.name }</h3>
+                <p>$ { product.price }</p>
             </CardContent>  
             <CardFooter>
-                <Link href='#' className='w-full'>
+                <Link href={`/products/${product.slug}`} className='w-full'>
                     <Button className='w-full' variant='outline' size='lg'>Ver producto</Button>
                 </Link>
             </CardFooter>

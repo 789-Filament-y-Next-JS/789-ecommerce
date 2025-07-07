@@ -1,19 +1,25 @@
-import React from 'react'
 import { ProductCard } from './product-card'
+import { ProductSummary } from '../interfaces/product-summary.interface';
 
-export const ProductList = () => {
+
+interface Props {
+    products: ProductSummary[];
+}
+
+export const ProductList = ({ products }: Props) => {
+
     return (
         <>
             <div className='mb-8'>
-                <h1>Lista de producos</h1>
+                <h1>Lista de productos</h1>
                 <p>Productos mas recientes</p>
             </div>
 
             <ul className='product__list'>
                 {
-                    [0,1,2,3,4,5].map((item, index) => (
+                    products.map((product, index) => (
                         <li key={index}>
-                            <ProductCard/>
+                            <ProductCard product={product}/>
                         </li>
                     ))
                 }
