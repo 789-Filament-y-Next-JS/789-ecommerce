@@ -11,7 +11,7 @@ export const AppBarMenu = () => {
     const pathname = usePathname();
 
     return (
-        <ul className='flex items-center justify-center gap-4'>
+        <ul className='flex flex-col justify-start items-start md:flex-row md:items-center md:justify-center gap-4'>
             {
                 appbarMenuItems.map((item) => (
                     <li 
