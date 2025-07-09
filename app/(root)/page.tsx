@@ -2,6 +2,7 @@ import { HeroSection } from "@/components/hero-section";
 import { getAllProducts } from "@/modules/products/actions/get-all-products";
 import { ProductList } from "@/modules/products/components/product-list";
 
+export const revalidate = 15;
 
 export default async function HomePage() {
 

@@ -9,6 +9,9 @@ export const getAllProducts = async (page: string | number = 1) => {
 
 
     const { data } = await apiClient.get<GetAllProductsResponse>('/products')
+
+    console.log("obteniendo productos");
+
     return data;
 
 
