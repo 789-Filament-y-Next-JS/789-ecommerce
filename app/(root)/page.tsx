@@ -7,7 +7,7 @@ export const revalidate = 15;
 
 export default async function HomePage() {
 
-    const { products } = await getAllProducts()
+    const { products, meta } = await getAllProducts()
 
     return (
         <>
@@ -15,7 +15,7 @@ export default async function HomePage() {
 
             <section>
                 <div className="container">
-                    <ProductList products={products}/>
+                    <ProductList meta={meta} products={products}/>
                 </div>
             </section>
         </>

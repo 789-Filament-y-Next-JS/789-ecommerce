@@ -1,3 +1,4 @@
+import { Providers } from "@/components/providers";
 import "./globals.css";
 import { bodyFont } from "@/config/fonts";
 
@@ -11,10 +12,12 @@ interface Props {
 export default function RootLayout(props: Props) {
 
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body className={ bodyFont.className } >
-        { props.children }
-      </body>
-    </html>
+    <Providers>
+      <html lang="es" suppressHydrationWarning>
+        <body className={bodyFont.className} >
+          {props.children}
+        </body>
+      </html>
+    </Providers>
   );
 }
