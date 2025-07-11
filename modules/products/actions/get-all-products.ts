@@ -8,9 +8,11 @@ import { GetAllProductsResponse } from "../interfaces/get-all-products-response.
 export const getAllProducts = async (page: string | number = 1) => {
 
 
-    const { data } = await apiClient.get<GetAllProductsResponse>('/products')
-
-    console.log("obteniendo productos");
+    const { data } = await apiClient.get<GetAllProductsResponse>('/products', {
+        params: {
+            page: page
+        }
+    })
 
     return data;
 

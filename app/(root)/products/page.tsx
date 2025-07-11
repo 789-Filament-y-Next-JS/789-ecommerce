@@ -4,14 +4,14 @@ import { Metadata } from "next";
 
 export default async function ProductsPage() {
 
-    const { products } = await getAllProducts()
+    const { products, meta } = await getAllProducts()
     
 
     return (
         <>
             <section className="py-8">
                 <div className="container">
-                    <ProductList products={products}/>
+                    <ProductList products={products} meta={meta}/>
                 </div>
             </section>
 
