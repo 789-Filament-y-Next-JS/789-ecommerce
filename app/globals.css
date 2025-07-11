@@ -138,11 +138,11 @@
 
 /* ===== UTILITIES ===== */
 @utility container {
-  @apply max-w-[90%] mx-auto
+  @apply max-w-[90%] md:max-w-[85%] lg:max-w-[75%] mx-auto
 }
 
 @utility flex-center {
-  @apply flex items-center;
+  @apply flex items-center justify-center;
 }
 
 /* ===== COMPONENTS ===== */

@@ -20,8 +20,8 @@ export const ProductCard = ({ product }: Props) => {
                 <Image
                     src={imageUrl}
                     alt={ product.name }
-                    width={400}
-                    height={400}
+                    width={300}
+                    height={300}
                 />
             </CardHeader>
             <CardContent>
