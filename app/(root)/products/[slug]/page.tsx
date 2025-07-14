@@ -9,6 +9,7 @@ import { Separator } from "@/components/ui/separator";
 import { HtmlRenderer } from "@/components/hrml-renderer";
 import { ShoppingCart } from "lucide-react";
 import { Metadata } from "next";
+import { ButtonCart } from "@/modules/cart/components/ButtonCart";
 
 
 interface Props {
@@ -44,7 +45,7 @@ export default async function ProductPage({ params }: Props) {
     const imageUrl = "http://localhost:8000/storage/" + product.image;
 
     return (
-        <section className="pt-8">
+        <section className="pt-12 min-h-[60vh]">
             <div className="container grid grid-cols-1 md:grid-cols-2 flex-center gap-8">
 
                 {/* IMAGEN */}
@@ -65,9 +66,7 @@ export default async function ProductPage({ params }: Props) {
                     {/* TODO: AGREGAR INPUT DE CANTIDAD */}
                     
                     
-                    <Button>
-                        <ShoppingCart/> Agregar al carrito
-                    </Button>
+                    <ButtonCart product={product} />
 
                     <Separator className="my-2"/>
                     <HtmlRenderer htmlString={ product.description } />

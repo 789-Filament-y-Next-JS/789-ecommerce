@@ -158,4 +158,8 @@
   .product__list {
     @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6
   }
+
+  .cart-card-content {
+    @apply flex flex-row items-center gap-6
+  }
 }

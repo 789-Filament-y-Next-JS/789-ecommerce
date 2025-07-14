@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { AppBarMenu } from './app-bar-menu'
 import { ShoppingCart } from 'lucide-react'
 import { AppSidebar } from '../app-sidebar'
+import { Button } from '../ui/button'
 
 
 export const AppBar = () => {
@@ -19,18 +20,24 @@ export const AppBar = () => {
 
                 {/* MENU */}
                 <div className='hidden md:block'>
-                    <AppBarMenu/>
+                    <AppBarMenu />
                 </div>
 
                 {/* CARRITO Y LOGIN */}
                 <div className='flex-center justify-end gap-6'>
-                    <ShoppingCart size={20}/>
+
+                    <Link href={'/cart'}>
+                        <Button variant={'ghost'}>
+                            <ShoppingCart size={20} />
+                        </Button>
+                    </Link>
+
                     <Link className='hidden md:block' href='/auth/login'>Iniciar Sesion</Link>
                 </div>
 
                 {/* MENU RESPONSIVE */}
                 <div className='md:hidden flex justify-end'>
-                    <AppSidebar/>
+                    <AppSidebar />
                 </div>
 
             </div>
